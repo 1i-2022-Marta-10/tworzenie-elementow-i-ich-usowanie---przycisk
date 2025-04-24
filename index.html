@@ -17,10 +17,16 @@
     const display = document.querySelector('main');
     const btn = document.querySelector('button');
 
+    let i=1
+
     btn.addEventListener('click', function(){
         const par = document.createElement('p');
-        par.innerText = 'nowy paragraf';
+        par.innerText = `nowy paragraf nr ${i}`;
+        par.addEventListener('click', function(){
+            this.remove()
+        })
         display.append(par);
+        i++
     });
 </script>
 </body>
