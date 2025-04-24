@@ -5,23 +5,56 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #d8a3cf;
+            text-align: center;
+        }
+
+        h1 {
+            color: #85167c;
+            font-family: 'Courier New', monospace;
+        }
+
+        input, button {
+            font-size: 16px;
+            font-family: 'Verdana', sans-serif;
+        }
+
+        button {
+            background-color: #77581d;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #ca5ab8;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
-    <header> aaaa </header>
+    <header> <h1>dodaj i zabierz element</h1> </header>
     <main>
+        <input id='t1', type='text'> podaj rodzaj elementu <br><br>
+        <input id='t2', type='text'> podaj treść elementu <br><br>
         <button>dodaj elemnt</button>
     </main>
 </div>
 <script>
     const display = document.querySelector('main');
     const btn = document.querySelector('button');
+    const t1 = document.querySelector('#t1');
+    const t2 = document.querySelector('#t2');
 
     let i=1
 
     btn.addEventListener('click', function(){
-        const par = document.createElement('p');
-        par.innerText = `nowy paragraf nr ${i}`;
+        const par = document.createElement(t1.value);
+        par.innerText = `${t2.value}`;
         par.addEventListener('click', function(){
             this.remove()
         })
